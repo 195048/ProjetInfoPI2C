@@ -753,7 +753,7 @@ def processRequest(client,address):
 		if getPlayerColor(state,name) == 'black' :
 			_, move = negamaxfinal(state,'black')
 		else :
-			move = randomWhiteMove(state)
+			_, move = negamaxfinal(state,'white')
 		print(state)
 		print(move[0])
 		print(move[1])
