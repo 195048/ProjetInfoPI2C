@@ -661,7 +661,7 @@ def distancefromcenter(pion):	#renvoie la distance par rapport au centre d'un pi
 
 
 
-def negamaxfinal(state,player,timeout = 2.85):		#fonctin déterminant le meilleur coup possible de manière itérative en recherchant les coups avec la mailleure heurisique
+def negamaxfinal(state,player,timeout = 2.80):		#fonctin déterminant le meilleur coup possible de manière itérative en recherchant les coups avec la mailleure heurisique
 	cache = defaultdict(lambda : 0)
 	start = time.time()
 	def cachedNegamaxWithPruningLimitedDepth(state, player,depth = 3, alpha = float('-inf') , beta = float('inf')):
@@ -674,7 +674,7 @@ def negamaxfinal(state,player,timeout = 2.85):		#fonctin déterminant le meilleu
 			possibilities = [(move, apply(state, move)) for move in moves(state,player)]
 			possibilities.sort(key=lambda poss: cache[tuple(poss[1])])
 			for move, successor in reversed(possibilities):
-				if time.time() - start > 2.85 :
+				if time.time() - start > 2.80 :
 					break
 				value, _ ,over = cachedNegamaxWithPruningLimitedDepth(successor,otherplayer(player), depth-1, -beta, -alpha)
 				theOver = theOver and over
@@ -755,8 +755,6 @@ def processRequest(client,address):
 		else :
 			_, move = negamaxfinal(state,'white')
 		print(state)
-		print(move[0])
-		print(move[1])
 		sendJSON(client,{
 		"response": "move",
 		"move": {
