@@ -5,15 +5,15 @@ Le but principal de cet IA est de déterminer le coup le plus intéréssant à j
 ## Bibliothèques utilisées : 
 
 Voici une liste des bibliothèques utiliseés dans le cadre du projet et une brève déscription de celle-ci : 
-	1) 'socket' :
-	2) 'threading' :
-	3) 'sys' : 
-	4) 'copy' :
-	5) 'time' :
-	6) 'sqrt' de 'math' : 
-	7) 'defaultdict' de 'collections' : 
-	8) 'json' : 
-	9) 'random' : 
+1) 'socket' :
+2) 'threading' :
+3) 'sys' : 
+4) 'copy' :
+5) 'time' :
+6) 'sqrt' de 'math' : 
+7) 'defaultdict' de 'collections' : 
+8) 'json' : 
+9) 'random' : 
 
 ## Subdivision du code : 
 	1) Game.py :  
