@@ -18,6 +18,8 @@ Voici une liste des bibliothèques utiliseés dans le cadre du projet et une br�
 
 ## Subdivision du code : 
 
+Nous avons subdiviser notre code en 4 parties principales afin de simpliciter la compréhension et la lecture de celui-ci. 
+
 1) Game.py : 
 2) JsonNetwork : 
 3) IA : 
