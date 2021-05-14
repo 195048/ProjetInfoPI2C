@@ -20,7 +20,7 @@ Voici une liste des bibliothèques utiliseés dans le cadre du projet et une br�
 
 1) Game.py : Serie d'exception nécessaire à la détérmination des coups possibles ainsi qu'au bon déroulement du jeu. 
 2) JsonNetwork : Permet la communication réseaux sous format json.
-3) IA : Permet de déterminer les meilleurs coups possible en fonction de l'état du jeu
+3) IA : Permet de déterminer les meilleurs coups possible en fonction de l'état du jeu.
 4) Client : Permet de s'inscire et de communiquer au serveur gérant les parties.
 
 
