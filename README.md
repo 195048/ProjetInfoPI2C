@@ -101,7 +101,7 @@ La variable lives donne le nombre de vies restantes du joueur, chaque joueur a 3
 
 La variable errors liste les raisons pour lesquelles les coups joués étaient mauvais.
 
-La variable state donne l'état du je, elle contient différentes infos nécéssaire au client afin qu'il puisse décider comment jouer. 
+La variable state donne l'état du jeu, elle contient différentes infos nécéssaire au client afin qu'il puisse décider comment jouer. 
 
 Contenu de state : 
 
@@ -124,6 +124,10 @@ Contenu de state :
 ```
 
 La variable Players donne les noms des joueurs inscris au match, le premier joueur représente celui qui joueura en premier avec les pions noirs. 
+
+La variable current donne l'indice dans la liste Players du joueur devant donner son coup.
+
+La variable board donne le plateau de jeu. 
 
 
 ## Stratégie utilisée pour la génération des coups :
