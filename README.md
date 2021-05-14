@@ -16,10 +16,10 @@ Voici une liste des bibliothèques utiliseés dans le cadre du projet et une br�
 9) 'random' : 
 
 ## Subdivision du code : 
-	1) Game.py :  
-	2) JsonNetwork : 
-	3) IA : 
-	4) Client : 
+1) Game.py :  
+2) JsonNetwork : 
+3) IA : 
+4) Client : 
 
 
 ## Démarrage de l'IA : 
