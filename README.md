@@ -50,7 +50,7 @@ Contenu du message :
 
 Par défaut, les variables port et name sont réspectivement : 3100 et "195048,195178".
 
-Si tout se passe corrèctement, le serveur répond : 
+Si tout se passe correctement, le serveur répond : 
 
 ```json
 {
@@ -59,7 +59,7 @@ Si tout se passe corrèctement, le serveur répond :
 ```
 
 
-### Verification de la présence : 
+### Vérification de la présence : 
 
 
  Afin de vérifier si le client est toujours connecté, le serveur envoit régulièrement des requète "ping" sur le port mentionné lors de l'inscription, auquelle nous devons répondre "pong"
