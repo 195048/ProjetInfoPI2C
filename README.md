@@ -148,3 +148,6 @@ L'heuristique que nous avons mis en place prend 2 paramètres en compte :
 2. La différence de pions entre les 2 joueurs. Avec cette variable, nous souhaitons maximiser le nombre de pions adverses que nous poussons tout en gardant un maximum des notres. 
 
 Pour relier les 2, nous avons utiliser un facteur 50, déterminé comme optimal à travers des test. En effet si nous ne metton pas de facteur entre les 2, la différence de pions est trop faible pour impacter la décision de l'IA et si le facteur est trop elevé, l'IA joue "trop agressivement" et a tendance à trop s'éloigner du centre et perd donc l'avantage du centre.
+En outre, lorsque le client voit une victoire potentielle, l'heuristique de cet état sera démesurément grande afin que il sâche que cet état est de loin le meilleur atteignable.
+
+Pour finir, la fonction negamaxfinal parcours tout les états liés aux principal, et ce de manière réccursive, tout en évaluant ceux-ci grâce à l'heuristique. Pour finir, il renvoie le meilleur move (lié à l'état ayant la meilleure heurisitque donc) qu'il aura trouver dans le temps imparti (ici fixé à 2.8sec, car le client doit répondre en 3sec. Les 0.2sec sont la comme sécurité au cas ou la communication réseaux prednrait trop de temps).
