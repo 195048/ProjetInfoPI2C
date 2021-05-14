@@ -6,7 +6,7 @@ Le but principal de cet IA est de déterminer le coup le plus intéréssant à j
 ## Bibliothèques utilisées : 
 
 Voici une liste des bibliothèques utiliseés dans le cadre du projet et une brève déscription de celle-ci : 
-1) 'socket' : Socket est utilisé pour envoyer un message à travers le reseaux. Ce message transite entre réseaux local ou connecté à distance et l'ordinateur avec sa propre connection à celui-ci.
+1) 'socket' : Socket est utilisé pour communiquer un message à travers le réseaux. Ce message transite entre réseaux local ou connecté à distance et l'ordinateur avec sa propre connection à celui-ci.
 2) 'threading' : Treading permet au programme de lancer de multiples processus en même temps.
 3) 'sys' : Sys permet à l'interpréteur d'utiliser certaines variables du programme.
 4) 'copy' : Permet d'effectuer une copie de variables.
@@ -130,11 +130,11 @@ La variable Players donne les noms des joueurs inscris au match, le premier joue
 
 Premièrement afin de pouvoir déterminer le meilleur coup jouable, nous devons lister tout les coups jouables par tout les mabres/trains de marbres. 
 
-La première étape dans cet détermination de tout les coups est la détermination de la position de tout les marbres et de tout les trains de marbres. Pour cela avons écrit 2 fonctions, une pour déterminer la position des marbres et l'autre servant à déterminer tout les trains de marbres présent sur le tableau. 
+La première étape dans cet détermination de tout les coups est la détermination de la position de tout les marbres et de tout les trains de marbres. Pour cela nous avons écrit 2 fonctions, une pour déterminer la position des marbres et l'autre servant à déterminer tout les trains de marbres présent sur le tableau. 
 
 Par après, nous déterminons tout les coups possibles en excluant tout les mauvais.
 
-Pour finir, afin de génerer le meilleur coup, l'IA parcoure tout les états possibles liés à l'état donné et évaluer ceux-ci (les états liés sont donnés par un coup, l'état initial avec le coup joué = état lié), le tout sur plusieurs profondeur. Par la suite, elle évalue ces états avec une heuristique. 
+Pour finir, afin de génerer le meilleur coup, l'IA parcoure tout les états possibles liés à l'état donné et évaluer ceux-ci (les états liés sont donnés par un coup, l'état initial avec le coup joué = état lié), le tout sur plusieurs profondeurs. Par la suite, elle évalue ces états avec une heuristique. 
 
 Elle détermine le meilleur coup possible comme étant le coup la menant à l'état avec la meilleur heuristique. 
 
@@ -144,16 +144,3 @@ L'heuristique que nous avons mis en place prend 2 paramètres en compte :
 2. La différence de pions entre les 2 joueurs. Avec cette variable, nous souhaitons maximiser le nombre de pions adverses que nous poussons tout en gardant un maximum des notres. 
 
 Pour relier les 2, nous avons utiliser un facteur 50, déterminé comme optimal à travers des test. En effet si nous ne metton pas de facteur entre les 2, la différence de pions est trop faible pour impacter la décision de l'IA et si le facteur est trop elevé, l'IA joue "trop agressivement" et a tendance à trop s'éloigner du centre et perd donc l'avantage du centre.
-
-
-
-
-
-
-
-
-
-
-
-
-
