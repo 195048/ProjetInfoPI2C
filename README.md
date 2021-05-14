@@ -6,18 +6,17 @@ Le but principal de cet IA est de déterminer le coup le plus intéréssant à j
 ## Bibliothèques utilisées : 
 
 Voici une liste des bibliothèques utiliseés dans le cadre du projet et une brève déscription de celle-ci : 
-1) 'socket' :
-2) 'threading' :
-3) 'sys' : 
-4) 'copy' :
-5) 'time' :
-6) 'sqrt' de 'math' : 
-7) 'defaultdict' de 'collections' : 
-8) 'json' : 
-9) 'random' : 
+1) 'socket' : Socket est utilisé pour envoyer un message à travers le reseaux. Ce message transite entre réseaux local ou connecté à distance et l'ordinateur avec sa propre connection à celui-ci.
+2) 'threading' : Treading permet au programme de lancer de multiples processus en même temps.
+3) 'sys' : Sys permet à l'interpréteur d'utiliser certaines variables du programme
+4) 'copy' : Permet d'effectuer une copie de variables.
+5) 'time' : Time fournit une multitude de fonctions manipulant le temps.
+6) 'sqrt' de 'math' : Permet d'utiliser une fonction réalisant la racine carrée d'un nombre
+7) 'defaultdict' de 'collections' : Est une fonction qui, lorsque la cléf demandée est inexistante, renvoie une valeur par défaut définit à l'avance.
+8) 'json' : Elle permet d'utiliser et de communiquer avec des fichiers json.
+9) 'random' : Permet d'utiliser des fonctions génératrices de nombre pseudo-aléatoires.
 
 ## Subdivision du code : 
-
 1) Game.py :  
 2) JsonNetwork : 
 3) IA : 
@@ -125,34 +124,8 @@ Contenu de state :
 
 La variable Players donne les noms des joueurs inscris au match, le premier joueur représente celui qui joueura en premier avec les pions noirs. 
 
-Current représente l'indice dans la liste Players du joueur devant jouer.
-
-Board représente le tableau de jeu. 
 
 
-### Réponse move
-
-Le client répond par le coup souihaité : 
-
-Exemple de coup : 
-
-```json
-{
-   "marbles": [[1, 1], [2, 2]],
-   "direction": "SE"
-}
-```
-
-Marbles liste les marbres que l'on souhaite bouger, ils sont donné sous la forme d'une liste de liste. Les sous-listes représentent un marbre, ils sont donnés sous forme [ligne,colonne]. La liste principale liste tout les marbres que l'on souhaite déplacer. 
-
-Direction donne la direction dans laquelle les marbres doivent se déplacer.
-
-
-
-
-## Stratégie pour la génération des coups :
-
-Afin de génerer le meilleur coup, l'IA 
 
 
 
