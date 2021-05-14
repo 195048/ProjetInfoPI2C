@@ -96,7 +96,7 @@ def fetch(address, data, timeout=1):
 
 
 
-directions = {			#
+directions = {			#dictionnaire contenant toutes les diréctions possibles pour un mouvement, en outre il contient les mouvement nécéssaire pour aller dans la dite direction
 	'NE': (-1,  0),
 	'SW': ( 1,  0),
 	'NW': (-1, -1),
@@ -105,7 +105,7 @@ directions = {			#
 	 'W': ( 0, -1)
 }
 
-opposite = {
+opposite = {		#dictionnaire contenant toutes les directions opposées
 	'NE': 'SW',
 	'SW': 'NE',
 	'NW': 'SE',
@@ -142,7 +142,7 @@ def checkMarbles(state, move):
 		if getColor(state, pos) != color:
 			raise BadMove('Marble {} is not yours'.format(pos))
 		
-def isOnBoard(pos):
+def isOnBoard(pos):	#vérifie si un marbre est toujours sur le tableau de jeu ou non
 	l, c = pos
 	if min(pos) < 0:
 		return False
@@ -152,11 +152,11 @@ def isOnBoard(pos):
 		return False
 	return True
 
-def addDirection(pos, direction):
+def addDirection(pos, direction):	# sert à déterminer la position d'un marbre après avoir fait un mouvement 
 	D = directions[direction]
 	return (pos[0] + D[0], pos[1] + D[1])
 
-def moveOneMarble(state, pos, direction):
+def moveOneMarble(state, pos, direction):	#sert à déplacer un marbre dans une direction donnée 
 	li, ci = pos
 	ld, cd = addDirection(pos, direction)
 	color = getColor(state, pos)
@@ -181,32 +181,32 @@ def moveOneMarble(state, pos, direction):
 
 	return res
 
-def opponent(color):
+def opponent(color):	#sert à renvoyer l'autre joueur 
 	if color == 'W':
 		return 'B'
 	return 'W'
 
-def getStatus(state, pos):
+def getStatus(state, pos):	#donne le 'status' de la case demandée (hors du tableau, blanche,noire ou vide)
 	if not isOnBoard(pos):
 		raise BadMove('The position {} is outside the board'.format(pos))
 	return state['board'][pos[0]][pos[1]]
 
-def isEmpty(state, pos):
+def isEmpty(state, pos):		# détermine si la position donnée est vide
 	return getStatus(state, pos) == 'E'
 
-def isFree(state, pos):
+def isFree(state, pos):	
 	if isOnBoard(pos):
 		return isEmpty(state, pos)
 	else:
 		return True
 
-def getColor(state, pos):
+def getColor(state, pos):	#donne la couleur du marbre à la position donnée
 	status = getStatus(state, pos)
 	if status == 'W' or status == 'B':
 		return status
 	raise BadMove('There is no marble here {}'.format(pos))
 
-def moveMarblesTrain(state, marbles, direction):
+def moveMarblesTrain(state, marbles, direction):	# sert à déplacer un train de marbre dans la direction donnée 
 	if direction in ['E', 'SE', 'SW']:
 		marbles = sorted(marbles, key=lambda L: -(L[0]*9+L[1]))
 	else:
@@ -229,12 +229,12 @@ def moveMarblesTrain(state, marbles, direction):
 
 	return state
 
-def moveMarbles(state, marbles, direction):
+def moveMarbles(state, marbles, direction):		#déplace un marbre dans la direction donné 
 	for pos in marbles:
 		state = moveOneMarble(state, pos, direction)
 	return state
 
-def sameLine(direction1, direction2):
+def sameLine(direction1, direction2): #sert à déterminer si 2 pions sont alignés ou non
 	if direction1 == direction2:
 		return True
 	if direction1 == opposite[direction2]:
@@ -712,7 +712,7 @@ def wrapperbis(*args,fun = negamaxfinal):	#fonction à but de test pour negamaxf
 s = socket.socket()
 s.connect(('127.0.0.1',3000))
 
-def inscription(port = 3100, name = "195048,195178"):
+def inscription(port = 3100, name = "195048,195178"):		# fonction servant à s'incrire au serveur lors du lancement du code
 	sendJSON(s,{
 	"request": "subscribe",
 	"port": port,
@@ -734,7 +734,7 @@ def getPlayerColor(state,name = None):
 
 
 
-def processRequest(client,address):
+def processRequest(client,address):		#permet de déterminer le type de requete et déterminer la réponde adéquate
 	'''
 		Route request to request handlers
 	'''
@@ -768,7 +768,7 @@ def processRequest(client,address):
 		raise ValueError('Unknown request \'{}\''.format(request['request']))
 
 
-def listenForRequests(port = 3100 ):
+def listenForRequests(port = 3100 ):		# fonction servant à écouter les requêtes envoyée par le serveur
 	'''
 		Start thread to listen to requests.
 		Returns a function to stop the thread.
@@ -816,7 +816,7 @@ def listenForRequests(port = 3100 ):
 
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':		# partie lancement du code, sert à entrer les variables via la ligne de commande 
 	args = sys.argv[1:]
 	port = 3100
 	name = "195048,195178"
