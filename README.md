@@ -6,7 +6,7 @@ Le but principal de cet IA est de déterminer le coup le plus intéréssant à j
 ## Bibliothèques utilisées : 
 
 Voici une liste des bibliothèques utiliseés dans le cadre du projet et une brève déscription de celle-ci : 
-1) 'socket' : Socket est utilisé pour envoyer un message à travers le réseaux. Ce message transite entre réseaux local ou connecté à distance et l'ordinateur avec sa propre connection à celui-ci.
+1) 'socket' : Socket est utilisé pour communiquer un message à travers le réseaux. Ce message transite entre réseaux local ou connecté à distance et l'ordinateur avec sa propre connection à celui-ci.
 2) 'threading' : Treading permet au programme de lancer de multiples processus en même temps.
 3) 'sys' : Sys permet à l'interpréteur d'utiliser certaines variables du programme
 4) 'copy' : Permet d'effectuer une copie de variables.
