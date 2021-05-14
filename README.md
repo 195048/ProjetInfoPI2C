@@ -1,5 +1,6 @@
 # ProjetInfoPI2C
-Projet d'informatique ayant pour but de créer une IA pour le jeu abalone.Le but principal de cet IA est de déterminer le coup le plus intéréssant à jouer dans le but de gagner la partie.
+Projet d'informatique ayant pour but de créer une IA pour le jeu abalone.
+Le but principal de cet IA est de déterminer le coup le plus intéréssant à jour dans le but de gagner la partie.
 
 ## Bibliothèques utilisées : 
 
