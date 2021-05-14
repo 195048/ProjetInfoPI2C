@@ -9,7 +9,6 @@ symbols = ['B', 'W']
 from collections import defaultdict
 import socket as s
 import json
-import time
 #################### GAME.PY
 
 
@@ -718,7 +717,7 @@ def inscription(port = 3100, name = "195048,195178"):
 	"request": "subscribe",
 	"port": port,
 	"name": name,
-	"matricules": ["12345", "67890"]
+	"matricules": ["195048", "195178"]
 	})
 	recu = receiveJSON(s)
 	reponse = str(recu['response'])
