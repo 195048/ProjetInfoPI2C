@@ -641,11 +641,11 @@ def heurestic(state,player):	#heuristique servant ici à évaluer les différent
 	if player == 'black':
 		for elem in black :
 			blacks += distancefromcenter(elem)
-		return -(blacks - 100*(len(black)-len(white)))
+		return -(blacks - 50*(len(black)-len(white)))
 	else : 
 		for elem in white : 
 			whites += distancefromcenter(elem)
-		return -(whites - 100*(len(white)-len(black)))
+		return -(whites - 50*(len(white)-len(black)))
 
 
 
@@ -661,10 +661,10 @@ def distancefromcenter(pion):	#renvoie la distance par rapport au centre d'un pi
 
 
 
-def negamaxfinal(state,player,timeout = 2.80):		#fonctin déterminant le meilleur coup possible de manière itérative en recherchant les coups avec la mailleure heurisique
+def negamaxfinal(state,player,timeout = 2.85):		#fonctin déterminant le meilleur coup possible de manière itérative en recherchant les coups avec la mailleure heurisique
 	cache = defaultdict(lambda : 0)
 	start = time.time()
-	def cachedNegamaxWithPruningLimitedDepth(state, player,depth = 3, alpha = float('-inf') , beta = float('inf')):
+	def cachedNegamaxWithPruningLimitedDepth(state, player,depth = 10, alpha = float('-inf') , beta = float('inf')):
 		
 		over , winner = gameOver(state)
 		if depth == 0 or over:
@@ -674,7 +674,7 @@ def negamaxfinal(state,player,timeout = 2.80):		#fonctin déterminant le meilleu
 			possibilities = [(move, apply(state, move)) for move in moves(state,player)]
 			possibilities.sort(key=lambda poss: cache[tuple(poss[1])])
 			for move, successor in reversed(possibilities):
-				if time.time() - start > 2.80 :
+				if time.time() - start > 2.85 :
 					break
 				value, _ ,over = cachedNegamaxWithPruningLimitedDepth(successor,otherplayer(player), depth-1, -beta, -alpha)
 				theOver = theOver and over
