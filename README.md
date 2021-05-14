@@ -124,8 +124,34 @@ Contenu de state :
 
 La variable Players donne les noms des joueurs inscris au match, le premier joueur représente celui qui joueura en premier avec les pions noirs. 
 
+Current représente l'indice dans la liste Players du joueur devant jouer.
+
+Board représente le tableau de jeu. 
 
 
+### Réponse move
+
+Le client répond par le coup souihaité : 
+
+Exemple de coup : 
+
+```json
+{
+   "marbles": [[1, 1], [2, 2]],
+   "direction": "SE"
+}
+```
+
+Marbles liste les marbres que l'on souhaite bouger, ils sont donné sous la forme d'une liste de liste. Les sous-listes représentent un marbre, ils sont donnés sous forme [ligne,colonne]. La liste principale liste tout les marbres que l'on souhaite déplacer. 
+
+Direction donne la direction dans laquelle les marbres doivent se déplacer.
+
+
+
+
+## Stratégie pour la génération des coups :
+
+Afin de génerer le meilleur coup, l'IA 
 
 
 
